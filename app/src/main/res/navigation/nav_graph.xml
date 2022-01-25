@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/naf_graph"
+    app:startDestination="@id/mainBoardFragment">
+
+
+    <fragment
+        android:id="@+id/creatTaskFragment"
+        android:name="com.example.todolist.ui.fragments.CreatTaskFragment"
+        android:label="fragment_creat_task"
+        tools:layout="@layout/fragment_creat_task" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.todolist.ui.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/mainBoardFragment"
+        android:name="com.example.todolist.boarding.fragment.MainBoardFragment"
+        android:label="fragment_main_board"
+        tools:layout="@layout/fragment_main_board" />
+</navigation>
