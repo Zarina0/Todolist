@@ -21,46 +21,47 @@
             android:id="@+id/never_radioBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Never"
+            android:layout_marginTop="@dimen/little_margin_top"
+            android:text="@string/never"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="@dimen/default_text_size" />
 
         <RadioButton
             android:id="@+id/every_day_radioBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Every day"
+            android:layout_marginTop="@dimen/little_margin_top"
+            android:text="@string/every_day"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="@dimen/default_text_size" />
 
         <RadioButton
             android:id="@+id/every_week_radioBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Every week"
+            android:layout_marginTop="@dimen/little_margin_top"
+            android:text="@string/every_week"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="@dimen/default_text_size" />
 
         <RadioButton
             android:id="@+id/every_month_radioBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Every month"
+            android:layout_marginTop="@dimen/little_margin_top"
+            android:text="@string/every_month"
             android:textColor="@color/black"
-            android:textSize="20sp"/>
+            android:textSize="@dimen/default_text_size"/>
 
         <RadioButton
             android:id="@+id/every_year_radioBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Every year"
+            android:layout_marginTop="@dimen/little_margin_top"
+            android:text="@string/every_year"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="@dimen/default_text_size"
+            />
 
     </RadioGroup>
 

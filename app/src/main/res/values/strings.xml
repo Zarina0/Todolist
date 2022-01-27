@@ -1,5 +1,24 @@
 <resources>
     <string name="app_name">Todolist</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_the_text">Enter the text</string>
+    <string name="due_date">Due date</string>
+    <string name="_20_08_21">20.08.21</string>
+    <string name="repeat">Repeat</string>
+    <string name="ewery_week">Ewery week</string>
+    <string name="and_new_task">And new task</string>
+    <string name="back_to_task_list">Back to task list</string>
+    <string name="title_text">Welcome to productive life!</string>
+    <string name="discription_text">Collobration with students</string>
+    <string name="skip">Skip</string>
+    <string name="hint_text">You have an account already?</string>
+    <string name="sign_in">Sign in</string>
+    <string name="title">Hello</string>
+    <string name="date">Hello</string>
+    <string name="repeattv">Hello</string>
+    <string name="never">Never</string>
+    <string name="every_day">Every day</string>
+    <string name="every_week">Every week</string>
+    <string name="every_month">Every month</string>
+    <string name="every_year">Every year</string>
 </resources>

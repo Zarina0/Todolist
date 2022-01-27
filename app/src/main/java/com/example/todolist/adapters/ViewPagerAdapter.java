@@ -53,7 +53,7 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
         public void onBind(ViewPagerModel model) {
             binding.tvTitle.setText(model.getTitle());
             binding.tvDiscription.setText(model.getDescription());
-            binding.imageview.setImageResource(model.getImage());
+            binding.lottieAnim.setAnimation(model.getImage());
             binding.skipBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
