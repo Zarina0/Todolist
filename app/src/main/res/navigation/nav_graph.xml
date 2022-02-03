@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/naf_graph"
-    app:startDestination="@id/mainBoardFragment">
+    app:startDestination="@id/signUpFragment">
 
 
     <fragment
@@ -21,4 +21,20 @@
         android:name="com.example.todolist.boarding.fragment.MainBoardFragment"
         android:label="fragment_main_board"
         tools:layout="@layout/fragment_main_board" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.todolist.boarding.auth.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.todolist.boarding.auth.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/finishRegistrationFragment"
+        android:name="com.example.todolist.boarding.auth.FinishRegistrationFragment"
+        android:label="fragment_finish_registration"
+        tools:layout="@layout/fragment_finish_registration" />
+
 </navigation>
