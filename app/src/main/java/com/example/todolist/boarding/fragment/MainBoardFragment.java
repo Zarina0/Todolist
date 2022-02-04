@@ -58,7 +58,7 @@ public class MainBoardFragment extends Fragment implements OnItemClickListener  
     }
     @Override
     public void itemListener() {
-        Navigation.findNavController(requireView()).navigate(R.id.homeFragment);
+        Navigation.findNavController(requireView()).navigate(R.id.signUpFragment);
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
         sharedPreferences.edit().putBoolean("isShow",true).apply();
 

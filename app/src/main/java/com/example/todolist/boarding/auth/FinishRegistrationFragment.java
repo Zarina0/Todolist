@@ -37,7 +37,7 @@ public class FinishRegistrationFragment extends Fragment {
         binding.btnGetStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(requireView()).navigate(R.id.homeFragment);
+                Navigation.findNavController(requireView()).navigate(R.id.mainBoardFragment);
             }
         });
     }

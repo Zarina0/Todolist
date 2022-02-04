@@ -20,9 +20,15 @@ import com.example.todolist.App;
 import com.example.todolist.R;
 import com.example.todolist.databinding.FragmentCreatTaskBinding;
 import com.example.todolist.models.TaskModel;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class CreatTaskFragment extends BottomSheetDialogFragment {
@@ -34,6 +40,8 @@ public class CreatTaskFragment extends BottomSheetDialogFragment {
     private int startDay;
     private  String date;
     private String repeat;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
 
     @Override
@@ -77,6 +85,26 @@ public class CreatTaskFragment extends BottomSheetDialogFragment {
         String text = binding.edText.getText().toString();
         TaskModel taskModel = new TaskModel(text,date, repeat);
         App.getApp().getDb().taskDao().insert(taskModel);
+        Map<String, String> task = new HashMap<>();
+        task.put("task", taskModel.getTask());
+        task.put("date", taskModel.getDate());
+        task.put("repeat", taskModel.getRepeat());
+
+        db.collection("task")
+                .add(task)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
     }
 
     private void showDatePickerDialog() {

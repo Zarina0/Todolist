@@ -27,14 +27,19 @@
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" />
     <fragment
+        android:id="@+id/finishRegistrationFragment"
+        android:name="com.example.todolist.boarding.auth.FinishRegistrationFragment"
+        android:label="fragment_finish_registration"
+        tools:layout="@layout/fragment_finish_registration" />
+    <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.todolist.boarding.auth.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
     <fragment
-        android:id="@+id/finishRegistrationFragment"
-        android:name="com.example.todolist.boarding.auth.FinishRegistrationFragment"
-        android:label="fragment_finish_registration"
-        tools:layout="@layout/fragment_finish_registration" />
+        android:id="@+id/profileFragment"
+        android:name="com.example.todolist.ui.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>

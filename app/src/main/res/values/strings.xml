@@ -21,4 +21,6 @@
     <string name="every_week">Every week</string>
     <string name="every_month">Every month</string>
     <string name="every_year">Every year</string>
+    <string name="profile">profile</string>
+    <string name="settings">settings</string>
 </resources>

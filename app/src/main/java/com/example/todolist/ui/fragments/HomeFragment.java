@@ -7,8 +7,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -59,6 +63,13 @@ public class HomeFragment extends Fragment implements HomeAdapter.Listener{
                 creatTaskFragment.show(requireActivity().getSupportFragmentManager(),"");
             }
         });
+        binding.person.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(requireView()).navigate(R.id.profileFragment);
+
+            }
+        });
     }
 
     @Override
@@ -76,4 +87,7 @@ public class HomeFragment extends Fragment implements HomeAdapter.Listener{
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
     }
-    }
+
+
+
+}

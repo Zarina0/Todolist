@@ -24,11 +24,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/skip_btn"
-        style="@style/SkipButton" />
+        style="@style/ContinueButton" />
 
-    <TextView
-        android:id="@+id/hint_tv"
-        style="@style/HintTextView"/>
 
     <TextView
         android:id="@+id/tv_sign_in"
