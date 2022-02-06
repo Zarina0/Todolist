@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,15 +21,21 @@ import com.example.todolist.App;
 import com.example.todolist.R;
 import com.example.todolist.databinding.FragmentCreatTaskBinding;
 import com.example.todolist.models.TaskModel;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+
+import io.grpc.internal.LogExceptionRunnable;
 
 
 public class CreatTaskFragment extends BottomSheetDialogFragment {
@@ -62,6 +69,7 @@ public class CreatTaskFragment extends BottomSheetDialogFragment {
             @Override
             public void onClick(View view) {
                 writeToDataBase();
+                datareturn();
                 dismiss();
             }
         });
@@ -78,8 +86,8 @@ public class CreatTaskFragment extends BottomSheetDialogFragment {
                 showRepeatDialog();
             }
         });
-    }
 
+    }
 
     private void writeToDataBase(){
         String text = binding.edText.getText().toString();
@@ -106,6 +114,26 @@ public class CreatTaskFragment extends BottomSheetDialogFragment {
                     }
                 });
     }
+    private void datareturn() {
+        db.collection("task").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    for (QueryDocumentSnapshot documentSnapshot : task.getResult()){
+                        Map<String, Object> tasks = documentSnapshot.getData();
+                        Log.e("ololo","onComplete:" + "\n"
+                                + tasks.get("task")+ "\n"+
+                                tasks.get("date") + "\n"
+                                + tasks.get("repeat"));
+                    }
+                }
+                else {
+                    Log.e("ololo", "onComplete: "+ task.getException() );
+                }
+            }
+        });
+    }
+
 
     private void showDatePickerDialog() {
         Calendar calendar = Calendar.getInstance();
